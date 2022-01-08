@@ -52,6 +52,17 @@
                         </div>
                         <div class="row">
                             <div class="col">
+                                <div class="image-select">
+                                    <input class="form-control" type="file" id="formFile" onchange="preview()">
+                                    <button onclick="clearImage()" class="btn btn-primary mt-3">Clear</button>
+                                    <br><br>
+                                    <div class="crop">
+                                        <img id="frame" src="../images/Imageupload.png" alt="Upload" class="img-fluid rounded-circle">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col">
                                 <main class="form-login">
                                     <form>
                                         <h1 class="h3 mb-3 fw-normal">Please register</h1>
@@ -92,15 +103,7 @@
                                 </main>
                                 <p>If you already have an account, Please <a href="loginpage.html">login your account</a>.</p>
                             </div>
-                            <div class="col">
-                                <div class="">
-                                    <label for="Image" class="form-label">Bootstrap 5 image Upload with Preview</label>
-                                    <input class="form-control" type="file" id="formFile" onchange="preview()">
-                                    <button onclick="clearImage()" class="btn btn-primary mt-3">Clear</button>
-                                </div>
-                                <img id="frame" src="" class="img-fluid" />
 
-                            </div>
 
                         </div>
 
@@ -119,7 +122,7 @@
 
         function clearImage() {
             document.getElementById('formFile').value = null;
-            frame.src = "";
+            frame.src = "../images/Imageupload.png";
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

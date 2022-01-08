@@ -9,6 +9,34 @@ body {
     text-decoration-color: #fff;
 }
 
+.image-select {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.crop {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.crop img {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+    border-top-left-radius: 100% !important;
+    border-top-right-radius: 100% !important;
+    border-bottom-right-radius: 100% !important;
+    border-bottom-left-radius: 100% !important;
+}
+
 .form-login {
     width: 100%;
     max-width: 330px;
