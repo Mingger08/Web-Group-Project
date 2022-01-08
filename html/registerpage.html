@@ -46,26 +46,23 @@
             <div class="col-12 ">
                 <h2>Register Account</h2>
                 <div class="row justify-content-center">
-                    <div class="col-10 " style="background-color: rgba(119, 119, 119, 0.473);">
+                    <div class="col-6 " style="background-color: rgba(119, 119, 119, 0.473);">
                         <div class="row justify-content-end">
                             <a class="btn-close" aria-label="Close" href="loginpage.html"></a>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <div class="image-select">
-                                    <input class="form-control" type="file" id="formFile" onchange="preview()">
-                                    <button onclick="clearImage()" class="btn btn-primary mt-3">Clear</button>
-                                    <br><br>
-                                    <div class="crop">
-                                        <img id="frame" src="../images/Imageupload.png" alt="Upload" class="img-fluid rounded-circle">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col">
                                 <main class="form-login">
                                     <form>
                                         <h1 class="h3 mb-3 fw-normal">Please register</h1>
+                                        <div class="image-select">
+                                            <input class="form-floating" type="file" id="formFile" onchange="preview()">
+                                            <button onclick="clearImage()" class="btn btn-primary mt-3">Clear</button>
+                                            <br><br>
+                                            <div class="crop">
+                                                <img id="frame" src="../images/Imageupload.png" alt="Upload" class="img-fluid rounded-circle">
+                                            </div>
+                                        </div>
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="floatingStaffID" placeholder="Staff ID">
                                             <label for="floatingInput">Staff ID</label>
@@ -103,11 +100,7 @@
                                 </main>
                                 <p>If you already have an account, Please <a href="loginpage.html">login your account</a>.</p>
                             </div>
-
-
                         </div>
-
-
                     </div>
                 </div>
 

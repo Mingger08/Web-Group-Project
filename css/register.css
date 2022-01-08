@@ -64,3 +64,8 @@ body {
     border-top-left-radius: 10;
     border-top-right-radius: 10;
 }
+
+.form-login input[type="file"] {
+    border-top-left-radius: 10;
+    border-top-right-radius: 10;
+}
