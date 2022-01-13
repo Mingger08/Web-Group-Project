@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>WorkAct- created by Spider.com</title>
+    <script src="//code.jquery.com/jquery.min.js"></script>
 
     <link href="../css/register.css" rel="stylesheet">
     <script src="../js/register.js"></script>
@@ -52,11 +53,12 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <main class="form-login">
-                                    <form>
+                                <main class="form-register">
+
+                                    <form name="signupform" action="../html/registeraccount.php" onSubmit="return signupformValidation();" method="POST" enctype="multipart/form-data">
                                         <h1 class="h3 mb-3 fw-normal">Please register</h1>
                                         <div class="image-select">
-                                            <input class="form-floating" type="file" id="formFile" onchange="preview()">
+                                            <input class="form-floating" type="file" id="imageToUpload" name="imageToUpload" onchange="preview()">
                                             <button onclick="clearImage()" class="btn btn-primary mt-3">Clear</button>
                                             <br><br>
                                             <div class="crop">
@@ -64,32 +66,32 @@
                                             </div>
                                         </div>
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="floatingStaffID" placeholder="Staff ID">
+                                            <input type="text" class="form-control" id="floatingStaffID" name="staffid" placeholder="Staff ID" required="true">
                                             <label for="floatingInput">Staff ID</label>
                                         </div>
                                         <br>
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                                            <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="name@example.com" required>
                                             <label for="floatingInput">Email address</label>
                                         </div>
                                         <br>
                                         <div class="form-floating">
-                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
                                             <label for="floatingPassword">Password</label>
                                         </div>
                                         <br>
                                         <div class="form-floating">
-                                            <input type="password" class="form-control" id="floatingConPassword" placeholder="Password">
+                                            <input type="password" class="form-control" id="floatingConPassword" name="conpassword" placeholder="Password" required>
                                             <label for="floatingConPassword">Confirm Password</label>
                                         </div>
                                         <br>
                                         <div class="dropdown">
                                             <label for="RoleSelect">Register as:</label>
                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="RoleSelect">
-                                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="Employee">
+                                                <input type="radio" class="btn-check" name="usertype" id="btnradio1" autocomplete="off" value="Employee">
                                                 <label class="btn btn-outline-primary" for="btnradio1">Employee</label>
 
-                                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="Employer">
+                                                <input type="radio" class="btn-check" name="usertype" id="btnradio2" autocomplete="off" value="Employer">
                                                 <label class="btn btn-outline-primary" for="btnradio2">Employer</label>
 
                                             </div>
@@ -108,6 +110,7 @@
             <div class="col"> </div>
         </div>
     </div>
+
     <script>
         function preview() {
             frame.src = URL.createObjectURL(event.target.files[0]);
@@ -116,6 +119,38 @@
         function clearImage() {
             document.getElementById('formFile').value = null;
             frame.src = "../images/Imageupload.png";
+        }
+
+        function signupformValidation() {
+            var staffid = document.signupform.staffid;
+            var email = document.signupform.email;
+            var password = document.signupform.password;
+            var cpassword = document.signupform.conpassword;
+            var usertype = document.signupform.usertype;
+            /*Validate*/
+            var all_letters = /^[A-Za-z "]+$/;
+            var val_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var lower_num = /^[a-z0-9]+$/;
+            var upper_lower_number = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+            /*Email Format*/
+            if (!email.value.match(val_email)) {
+                alert("You have entered an invalid email address!");
+                email.focus();
+                return false;
+            }
+            /*Password Contain Only Uppercase, Lowercase,min 8 length*/
+            else if (!password.value.match(upper_lower_number)) {
+                alert("Format password is wrong. Please insert the password contains at least one uppercase, one lowercase, one number and the minimum password length is eight.");
+                password.focus();
+                return false;
+            }
+            /*Password and confirm password must be same*/
+            else if (password.value != cpassword.value) {
+                alert("Password and confirm password is not same.");
+                cpassword.focus();
+                return false;
+            }
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

@@ -1,4 +1,7 @@
-html,
+@charset "utf-8";
+
+/* CSS Document */
+
 body {
     height: 100%;
 }
@@ -17,15 +20,15 @@ body {
 }
 
 .crop {
-    width: 300px;
-    height: 300px;
+    width: 270px;
+    height: 270px;
     overflow: hidden;
     text-align: center;
 }
 
 .crop img {
-    width: 300px;
-    height: 300px;
+    width: 270px;
+    height: 270px;
     margin: auto;
 }
 
@@ -37,7 +40,7 @@ body {
     border-bottom-left-radius: 100% !important;
 }
 
-.form-login {
+.form-register {
     width: 100%;
     max-width: 330px;
     padding: 15px;
@@ -46,26 +49,26 @@ body {
     border-bottom-left-radius: 10;
 }
 
-.form-login .form-floating:focus-within {
+.form-register .form-floating:focus-within {
     z-index: 2;
 }
 
-.form-login input[type="email"] {
+.form-register input[type="email"] {
     border-bottom-right-radius: 10;
     border-bottom-left-radius: 10;
 }
 
-.form-login input[type="text"] {
+.form-register input[type="text"] {
     border-bottom-right-radius: 10;
     border-bottom-left-radius: 10;
 }
 
-.form-login input[type="password"] {
+.form-register input[type="password"] {
     border-top-left-radius: 10;
     border-top-right-radius: 10;
 }
 
-.form-login input[type="file"] {
+.form-register input[type="file"] {
     border-top-left-radius: 10;
     border-top-right-radius: 10;
 }
