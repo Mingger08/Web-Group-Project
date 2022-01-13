@@ -47,36 +47,59 @@
                 <div class="row justify-content-center">
                     <div class="col-6 " style="background-color: rgba(119, 119, 119, 0.473);">
                         <main class="form-login">
-                            <form>
-                                <h1 class="h3 mb-3 fw-normal">Please log in</h1>
+                            <form name="loginform" action="../html/loginaccount.php" onSubmit="return loginformValidation();" method="POST"></form>
+                            <h1 class="h3 mb-3 fw-normal">Please log in</h1>
 
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                    <label for="floatingInput">Email address</label>
-                                </div>
-                                <br>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                    <label for="floatingPassword">Password</label>
-                                </div>
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <br>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
 
-                                <div class="checkbox mb-3">
-                                    <label>
-                          <input type="checkbox" value="remember-me"> Remember me
-                                </div>
-                                <button class="w-75 btn btn-lg btn-primary" type="submit">Log in</button>
+                            <div class="checkbox mb-3">
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </div>
+                            <button class="w-75 btn btn-lg btn-primary" type="submit">Log in</button>
                             </form>
                         </main>
-                        <p>If you don't have an account, Please <a href="registerpage.html">register your account</a>. 
-                            If you forget account password, Please <a href="forgetpassword.html">click me</a>. </p>
+                        <p>If you don't have an account, Please <a href="registerpage.html">register your account</a>. If you forget account password, Please <a href="forgetpassword.html">click me</a>. </p>
                     </div>
                 </div>
             </div>
             <div class="col"> </div>
         </div>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script>
+        function loginformValidation() {
+            /*Get Position*/
+            var position = document.getElementById("position");
+            var email = document.loginform.email;
+            var password = document.loginform.password;
+
+            /*Validate*/
+            var upper_lower_number = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            var val_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            /*Email Format*/
+            if (!email.value.match(val_email)) {
+                alert("You have entered an invalid email address!");
+                email.focus();
+                return false;
+            }
+            /*Password Contain Only Uppercase, Lowercase,min 8 length */
+            else if (!password.value.match(upper_lower_number)) {
+                alert("Format password is wrong.");
+                password.focus();
+                return false;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 
 </html>
