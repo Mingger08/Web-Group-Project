@@ -180,7 +180,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- 1st Row -->
           <div class="row">
-            <div class="col-md-4 col-sm-6 col-12">
+            <div class="col-lg-4 col-sm-6 col-12">
               <div class="info-box">
                 <!-- Apply any bg-* class to to the icon to color it -->
                 <span class="info-box-icon bg-green"><i class="ion ion-ios-people-outline"></i></span>
@@ -193,7 +193,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <!-- ./col -->
 
-            <div class="col-md-4 col-sm-6 col-12">
+            <div class="col-lg-4 col-sm-6 col-12">
               <div class="info-box">
                 <!-- Apply any bg-* class to to the icon to color it -->
                 <span class="info-box-icon bg-yellow"><i class="fa fa-medkit"></i></span>
@@ -204,7 +204,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div><!-- /.info-box -->
             </div> <!-- ./col -->
 
-            <div class="col-md-4 col-sm-6 col-12">
+            <div class="col-lg-4 col-sm-6 col-12">
               <!-- small box -->
               <div class="info-box">
                 <!-- Apply any bg-* class to to the icon to color it -->
@@ -221,8 +221,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- /.content -->
 
       <!-- Left Column -->
-      <div class="row mt-4">
-      <section class="col-md-7 connectedSortable">
+      <section>
+      <div class="container">
+          <div class="row">
+      <section class="col-md-6 connectedSortable">
         <div class="box box-default">
           <div class="box-header with-border">
             <h3 class="box-title"> <i class="fa fa-pie-chart">&nbsp;&nbsp</i>Employee Attendance</h3>
@@ -240,16 +242,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- ./chart-responsive -->
               </div>
               <!-- /.col -->
-              <!-- <div class="col-md-4">
+              <div class="col-md-4">
                 <ul class="chart-legend clearfix">
-                  <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
-                  <li><i class="fa fa-circle-o text-green"></i> IE</li>
-                  <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
-                  <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
-                  <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
-                  <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
+                  <li><i class="fa fa-circle-o"color style="color:#00aba9"></i> On Work</li>
+                  <li><i class="fa fa-circle-o"color style="color:rgba(238, 241, 18, 0.747)"></i> On Leave</li>
+                  <li><i class="fa fa-circle-o"color style="color:#b91d47"></i> Absent</li>
+               
                 </ul>
-              </div> -->
+              </div>
               <!-- /.col -->
             </div>
             <!-- /.row -->
@@ -258,6 +258,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.box -->
       </section>
       </div>
+      </div>
+      </section>
 
     </div>
     <!-- /.content-wrapper -->
@@ -276,20 +278,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
 
   <script>
-    var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-    var yValues = [55, 49, 44, 24, 15];
+    var xValues = ["On Work", "On Leave", "Absent"];
+    var yValues = [10, 2, 2];
     var barColors = [
-      "#b91d47",
+    
       "#00aba9",
-      "#2b5797",
-      "#e8c3b9",
-      "#1e7145"
+      "rgba(238, 241, 18, 0.747)",
+      "#b91d47",
+     
     ];
 
     new Chart("myChart1", {
       type: "doughnut",
       data: {
-        labels: xValues,
         datasets: [{
           backgroundColor: barColors,
           data: yValues
