@@ -24,6 +24,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- table -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <!--digital clock-->
+    <link rel = "stylesheet" href = "../css/digitalclock.css">
+    <!-- analogclock -->
+    <link rel = "stylesheet" href = "../css/analogclock.css">
   
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -259,17 +263,73 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /.box-body -->
         </div><!-- /.box -->
       </section>
+
+       <!-- Right Column -->
+       <section>
+        <div class="container">
+            <div class="row">
+        <section class="col-md-5 connectedSortable">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title"> <i class="fa fa-clock-o">&nbsp;&nbsp</i>Take Attendance</h3>
+             
+            </div><!-- /.box-header -->
+            <!-- box-body -->
+            <div class="box-body">
+              <div class="row">
+                <div id = "clockContainer">
+                  <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+                </div>
+                <script src = "../js/analogclock.js"></script>
+              </div>
+              <!-- /.row -->
+              <div class="row">
+                <div id = "digital-clock"></div>
+                <script src = "../js/digitalclock.js"></script>
+              </div>
+              <!-- /.row -->
+              <div class="row">
+               <div class="container" style="width:100%; text-align:center;">
+                 
+                  Last updated on
+                </div>
+              </div>
+              <!-- /.row -->
+              <div class="row">
+               
+                <div class=container>
+                  <input type="submit" class="btn btn-info bg-red" id= "PunchOut" value="Punch Out" style="width: 120px;position: relative; left:14%">
+                  
+                </div>
+                <div class=container>
+                  <input type="submit" class="btn btn-info" id= "PunchIn" value="Punch In" style="width: 120px;position: absolute; left:37%;bottom:3%">
+                 
+                </div>
+              </div>
+              <!-- /.row -->
+             
+
+            </div>
+            <!-- /.box-body -->
+          </div><!-- /.box -->
+        </section>
+        </div>
+        </div>
+        </section>  
       </div>
       </div>
       </section>
 
-        
+      
+
 <section>
   <div class="container">
      
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Default Box Example</h3>
+          <h3 class="box-title"><i class="fa fa-user">&nbsp;&nbsp</i>Employee List</h3>
           <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div><!-- /.box-tools -->
@@ -358,7 +418,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         }
       }
     });
+
+
+
   </script>
+
+
+
+
 
   <!-- REQUIRED JS SCRIPTS -->
 
