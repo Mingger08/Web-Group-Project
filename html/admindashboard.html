@@ -1,3 +1,5 @@
+
+   
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -241,7 +243,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="row">
                     <div class="col-md-8">
                       <div class="chart-responsive">
-                        <canvas id="myChart1" height="230"></canvas>
+                        <canvas id="myChart1" height="232"></canvas>
                       </div>
                       <!-- ./chart-responsive -->
                     </div>
@@ -273,7 +275,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                       </div><!-- /.box-header -->
                       <!-- box-body -->
-                      <div class="box-body">
+                      <div class="mh-100 box-body" style="height: 340px">
                         <div class="row">
                           <div id="clockContainer">
                             <div id="hour"></div>
@@ -295,12 +297,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </div>
 
                           <!-- /.row -->
-                          <div class="row">
+                          <!-- <div class="row">
 
                             <div class=container style="width:100%; text-align:center;">
                               <input type="submit" class="btn btn-info bg-red" id="PunchOut" value="Punch Out"
                                 style="width:120px; display:inline-block;" onclick="toggle()">
-                              <!-- width: 120px;position: absolute; left:37%;bottom:3%; -->
+                              
                             </div>
                             <div class=container>
                               <input type="submit" class="btn btn-info" id="PunchIn" value="Punch In"
@@ -308,8 +310,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 onclick="toggle()">
 
                             </div>
+                          </div> -->
+                          <!-- /.row -->
+
+                           <!-- /.row -->
+                           <div class="row">
+
+                            <div class=container style="position:absolute;left:34%">
+                             
+                              <div class="input-group" >
+                               
+                                <input type="submit" class="btn btn-info" id="PunchIn" value="Punch In"
+                                  style="width: 120px;display: block;"
+                                  onclick="toggle()">
+                                  <span class="input-group-btn">
+                                  <input type="submit" class="btn btn-info bg-red" id="PunchOut" value="Punch Out"
+                                  style="width:120px; display:none;" onclick="toggle()">
+                                  
+                                </span>
+                              
+                              </div>
+                           
+                           
+
+                            </div>
                           </div>
                           <!-- /.row -->
+
                         </div>
 
                       </div>
