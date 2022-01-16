@@ -40,20 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
   </script>
 
- <script src="../js/generatepdf.js"></script>
 
-		<script>
-			function generatePDF() {
-				// Choose the element that our invoice is rendered in.
-				const element = document.getElementById('table','example');
-				// Choose the element and save the PDF for our user.
-				html2pdf()
-		.set({ html2canvas: { scale: 4 } })
-		.from(element)
-		.save();
-			}
-		</script>
-  
   
 
 
@@ -149,10 +136,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="header">EMPLOYEE MANAGEMENT</li>
           <!-- Optionally, you can add icons to the links -->
           <li><a href="#"><i class="fa fa-edit"></i> <span>Manage Attendance</span></a></li>
-          <li><a href="#"><i class="fa fa-edit"></i> <span>Manage Leave</span></a></li>
+          <li class="active"><a href="manageleave.html"><i class="fa fa-edit"></i> <span>Manage Leave</span></a></li>
           <li class="header">REPORT</li>
           <li><a href="#"><i class="fa fa-heart"></i> <span>Activities</span></a></li>
-          <li class="active"><a href="attendance.html"><i class="fa fa-group"></i> <span>Attendance</span></a></li>
+          <li><a href="attendance.html"><i class="fa fa-group"></i> <span>Attendance</span></a></li>
           <li><a href="#"><i class="fa fa-calendar"></i> <span>Leave</span></a></li>
 
         </ul>
@@ -167,7 +154,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content-header">
         <span>
           <h2>
-            List of Employee Attendance
+            List of Employee Leave
           </h2>
           <small>
             <ol class="breadcrumb"
@@ -175,7 +162,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <li> Home</a></li>
               <li><a href="admindashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-              <li class="active"><i class="fa fa-heart"></i> Attendance</a></li>
+              <li class="active"><i class="fa fa-edit"></i> Manage Leave</a></li>
 
             </ol>
           </small>
@@ -184,17 +171,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </section><br>
 
       <!-- Main content -->
-      <section>
-        <div class="row no-print">
-            <div class="col-xs-11">
-              <button type="button" class="btn btn-success pull-right" onClick="print()"><i class="fa fa-print"></i> Print
-             
-              <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;" onClick="generatePDF()">
-                <i class="fa fa-download"></i> Generate PDF
-              </button>
-            </div>
-          </div>
-      </section><br><br>
+     
       <section>
         <div class="container" >
 
@@ -217,7 +194,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <th>Department</th>
                     <th>Punch-In Time</th>
                     <th>Punch-Out Time</th>
-                   
+                    <th>Action</th>
                     
                   </tr>
                 </thead>
@@ -230,7 +207,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>63</td>
                     <td>2012/07/25</td>
                     <td>$170,750</td>
-                  
+                    <td> <button class="btn btn-success" style="width:38px;height:38px; border-radius:50%"  name="check" onclick="check()"><i class="fa fa-check"></i></button>&nbsp;&nbsp;
+                      <button class="btn btn-danger" style="width:38px;height:38px; border-radius:50%"  name="uncheck" onclick="uncheck()"><i class="fa fa-close"></i>
+                    </td>
                   </tr>
                 </tbody>
 
@@ -258,6 +237,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div>
   <!-- ./wrapper -->
+
+  <script>
+      window.onafterprint = function(e){
+    closePrintView();
+};
+function myFunction(){
+    window.print();
+}
+function closePrintView() {
+    window.location.href = 'attendance.html';   
+}
+  </script>
+
+  
+  
 
 
   <!-- REQUIRED JS SCRIPTS -->
