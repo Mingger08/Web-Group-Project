@@ -8,6 +8,7 @@
     <link rel="canonical" href="../css/register2.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="../css/register2.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -32,14 +33,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="mainpage.html"><b>Work</b>ACT</a>
+                <a class="navbar-brand" href="mainpage.php"><b>Work</b>ACT</a>
                    
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="registerpage.html">SIGN UP</a></li>
-                    <li><a href="loginpage.html"><i class="fa fa-lock"></i> LOGIN</a></li>
+                    <li><a href="registerpage.php">SIGN UP</a></li>
+                    <li><a href="loginpage.php"><i class="fa fa-lock"></i> LOGIN</a></li>
 
                 </ul>
             </div>
@@ -77,18 +78,20 @@
                                         <span class="input-icon"><i class="fa fa-lock"></i></span>
                                         <input class="form-control" type="password" placeholder="Confirm Password" name="conpassword"  required>
                                     </div>
-                                    <div class="dropdown">
-                                        <label for="RoleSelect">Register as:</label>
-                                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="RoleSelect">
-                                            <input type="radio" class="btn-check" name="usertype" id="btnradio1" autocomplete="off" value="Employee">
-                                            <label class="btn btn-outline-primary" for="btnradio1">Employee</label>
-
-                                            <input type="radio" class="btn-check" name="usertype" id="btnradio2" autocomplete="off" value="Employer">
-                                            <label class="btn btn-outline-primary" for="btnradio2">Employer</label>
-
-                                        </div>
-                                    </div>
-                                    <button class="btn signin" type="submit">Register</button>
+                                        <div class="dropdown">
+                                            <h6>Register as:</h6>
+                                            
+                                            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default">
+                    <input type="radio" id="btnradio1" name="usertype" value="Employee" /> Employee
+                </label> 
+                <label class="btn btn-default">
+                    <input type="radio" id="btnradio2" name="usertype" value="Employer" /> Employer
+                </label> 
+            </div>
+                                        </div><br><br><br>
+                                        
+                                    <button class="btn-signin" style="position:relative; bottom: -20px" type="submit">Register</button>
                                 </form>
                             </div>
                         </div>
@@ -98,6 +101,11 @@
         </div>
     </section><br><br><br><br>
 
+    <footer class="container-fluid text-center">
+       
+        <p>Created by Spider.com. <strong>Copyright &copy; 2022 <a href="#"><b>Work</b>ACT</a>.</strong> All rights
+          reserved.</p>
+      </footer>
   
     <script>
         function preview() {
@@ -142,7 +150,6 @@
         }
     </script>
 
-   
 </body>
 
 </html>
